@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Analyse - CorePulse Fitness Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #ff6b35;
+            color: white;
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin: 1.5rem 0 1rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid #f7b801;
+        }
+
+        .section h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .card h4 {
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .color-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .color-swatch {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+
+        .color-info {
+            flex: 1;
+        }
+
+        .color-info strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-info code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .font-demo {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .inter-demo {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .playfair-demo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .icon-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .icon-item i {
+            font-size: 2rem;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-list li {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #f7b801;
+        }
+
+        .responsive-table {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #ff6b35;
+            color: white;
+            font-weight: 600;
+        }
+
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            background: #1a1a1a;
+            color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ff6b35, #f7b801);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-chart-line"></i> Website Analyse</h1>
+            <p>CorePulse Fitness Studio - Vollständige Struktur- und Design-Analyse</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#sections">Sektionen</a></li>
+                <li><a href="#colors">Farben</a></li>
+                <li><a href="#typography">Typografie</a></li>
+                <li><a href="#images">Bilder & Icons</a></li>
+                <li><a href="#responsive">Responsive</a></li>
+                <li><a href="#interactive">Interaktiv</a></li>
+                <li><a href="#technical">Technisch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Sections -->
+            <section id="sections" class="section">
+                <h2><i class="fas fa-sitemap"></i> Website Sektionen</h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h4>1. Navigation (Header)</h4>
+                        <ul>
+                            <li>Fixed navbar with blur effect</li>
+                            <li>Logo: "CorePulse" (Playfair Display)</li>
+                            <li>Links: Home, Features, Über uns, Services, Bewertungen, Kontakt</li>
+                            <li>Mobile hamburger menu</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>2. Hero Section</h4>
+                        <ul>
+                            <li>Full viewport height (100vh)</li>
+                            <li>Headline: "Entfessle dein wahres Potenzial"</li>
+                            <li>Two CTA buttons</li>
+                            <li>Scroll indicator</li>
+                            <li>Gradient SVG background</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>3. Features Section</h4>
+                        <ul>
+                            <li>Title: "Warum CorePulse?"</li>
+                            <li>6 feature cards in grid</li>
+                            <li>Icons: Dumbbell, Users, Clock, Heart, Mobile</li>
+                            <li>Hover animations</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>4. Parallax Section</h4>
+                        <ul>
+                            <li>Mid-section CTA</li>
+                            <li>"Bereit für die Transformation?"</li>
+                            <li>Fixed background with dot pattern</li>
+                            <li>Kostenlose Probestunde button</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>5. About Section</h4>
+                        <ul>
+                            <li>Two-column layout</li>
+                            <li>Company history (since 2015)</li>
+                            <li>SVG placeholder image</li>
+                            <li>CTA to services</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>6. Services Section</h4>
+                        <ul>
+                            <li>4 service cards with pricing</li>
+                            <li>Personal Training (80€/h)</li>
+                            <li>Gruppenkurse (25€/Kurs)</li>
+                            <li>Ernährungsberatung (120€)</li>
+                            <li>Wellness & Recovery (40€)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>7. Testimonials</h4>
+                        <ul>
+                            <li>Dark background section</li>
+                            <li>3 customer reviews</li>
+                            <li>User avatars with gradients</li>
+                            <li>Glass morphism cards</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>8. Contact Section</h4>
+                        <ul>
+                            <li>Two-column layout</li>
+                            <li>Contact info + form</li>
+                            <li>Address, phone, email, hours</li>
+                            <li>Form validation</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>9. Footer</h4>
+                        <ul>
+                            <li>Dark background</li>
+                            <li>4-column layout</li>
+                            <li>Social media links</li>
+                            <li>Copyright notice</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colors -->
+            <section id="colors" class="section">
+                <h2><i class="fas fa-palette"></i> Farbpalette</h2>
+                
+                <h3>Primärfarben</h3>
+                <div class="color-palette">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #ff6b35;"></div>
+                        <div class="color-info">
+                            <strong>Primary Color</strong>
+                            <code>#ff6b35</code>
+                            <small>Orange/Red - Hauptakzent</small>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #1a1a1a;"></div>
+                        <div class="color-info">
+                            <strong>Secondary Color</strong>
+                            <code>#1a1a1a</code>
+                            <small>Dark Gray/Black</small>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #f7b801;"></div>
+                        <div class="color-info">
+                            <strong>Accent Color</strong>
+                            <code>#f7b801</code>
+                            <small>Golden Yellow</small>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Textfarben</h3>
+                <div class="color-palette">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #ffffff; border: 2px solid #ddd;"></div>
+                        <div class="color-info">
+                            <strong>Text Light</strong>
+                            <code>#ffffff</code>
+                            <small>White text</small>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #333333;"></div>
+                        <div class="color-info">
+                            <strong>Text Dark</strong>
+                            <code>#333333</code>
+                            <small>Dark gray text</small>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #666666;"></div>
+                        <div class="color-info">
+                            <strong>Text Gray</strong>
+                            <code>#666666</code>
+                            <small>Medium gray text</small>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Hintergrundfarben</h3>
+                <div class="color-palette">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #f8f9fa;"></div>
+                        <div class="color-info">
+                            <strong>Background Light</strong>
+                            <code>#f8f9fa</code>
+                            <small>Light gray background</small>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #1a1a1a;"></div>
+                        <div class="color-info">
+                            <strong>Background Dark</strong>
+                            <code>#1a1a1a</code>
+                            <small>Dark background</small>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Farbverläufe</h3>
+                <pre><code>/* Primary Gradient */
+--gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7b801 100%);
+
+/* Dark Gradient */
+--gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);</code></pre>
+            </section>
+
+            <!-- Typography -->
+            <section id="typography" class="section">
+                <h2><i class="fas fa-font"></i> Typografie</h2>
+                
+                <h3>Schriftarten</h3>
+                <div class="font-demo inter-demo">
+                    <h4>Inter (Sans-Serif)</h4>
+                    <p>Verwendet für Fließtext, Navigation, Buttons</p>
+                    <p><strong>Gewichte:</strong> 300, 400, 500, 600, 700</p>
+                    <p>Das ist ein Beispieltext in Inter. Diese Schriftart wird für den Großteil des Textes verwendet.</p>
+                </div>
+
+                <div class="font-demo playfair-demo">
+                    <h4>Playfair Display (Serif)</h4>
+                    <p>Verwendet für Überschriften und Logo</p>
+                    <p><strong>Gewichte:</strong> 400, 500, 600, 700</p>
+                    <h2 style="margin: 0;">CorePulse - Elegante Überschriften</h2>
+                </div>
+
+                <h3>Schriftgrößen</h3>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Desktop</th>
+                                <th>Mobile</th>
+                                <th>Verwendung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hero Headline</td>
+                                <td>4rem</td>
+                                <td>2.5rem</td>
+                                <td>Hauptüberschrift</td>
+                            </tr>
+                            <tr>
+                                <td>Section Headings</td>
+                                <td>3rem</td>
+                                <td>2rem</td>
+                                <td>Sektionsüberschriften</td>
+                            </tr>
+                            <tr>
+                                <td>Parallax Heading</td>
+                                <td>3.5rem</td>
+                                <td>2.5rem</td>
+                                <td>Parallax Sektion</td>
+                            </tr>
+                            <tr>
+                                <td>About Heading</td>
+                                <td>2.5rem</td>
+                                <td>2.5rem</td>
+                                <td>About Überschrift</td>
+                            </tr>
+                            <tr>
+                                <td>Logo</td>
+                                <td>2rem</td>
+                                <td>2rem</td>
+                                <td>Navigation Logo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Images & Icons -->
+            <section id="images" class="section">
+                <h2><i class="fas fa-images"></i> Bilder & Icons</h2>
+                
+                <h3>Externe Bibliotheken</h3>
+                <ul class="tech-list">
+                    <li><strong>Font Awesome 6.4.0</strong> - Alle Icons der Website</li>
+                    <li><strong>AOS (Animate On Scroll)</strong> - Scroll-Animationen</li>
+                </ul>
+
+                <h3>Bildquellen</h3>
+                <p>Alle Bilder sind als <span class="highlight">SVG Data URIs</span> eingebettet:</p>
+                <ul>
+                    <li><strong>Hero Background:</strong> SVG Farbverlauf mit Polygon-Overlay</li>
+                    <li><strong>About Image:</strong> SVG Platzhalter mit Gradient (400x300px)</li>
+                    <li><strong>Parallax Background:</strong> Dunkler Hintergrund mit Punktmuster</li>
+                </ul>
+
+                <h3>Icon Verwendung</h3>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <small>Modernste Ausstattung</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-user-friends"></i>
+                        <small>Persönliche Betreuung</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-clock"></i>
+                        <small>Flexible Zeiten</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-heart"></i>
+                        <small>Ganzheitlicher Ansatz</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-users"></i>
+                        <small>Community</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <small>Mobile App</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-running"></i>
+                        <small>Personal Training</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-apple-alt"></i>
+                        <small>Ernährungsberatung</small>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-spa"></i>
+                        <small>Wellness & Recovery</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Design -->
+            <section id="responsive" class="section">
+                <h2><i class="fas fa-mobile-alt"></i> Responsive Design</h2>
+                
+                <h3>Breakpoints</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Mobile</h4>
+                        <p><code>max-width: 768px</code></p>
+                        <ul>
+                            <li>Hamburger Navigation</li>
+                            <li>Reduzierte Schriftgrößen</li>
+                            <li>Single-Column Layouts</li>
+                            <li>Vertikale Button-Anordnung</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Desktop</h4>
+                        <p>Standard Styles</p>
+                        <ul>
+                            <li>Horizontal Navigation</li>
+                            <li>Multi-Column Grids</li>
+                            <li>Größere Schriften</li>
+                            <li>Hover-Effekte</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Mobile Anpassungen</h3>
+                <ul>
+                    <li>Navigation wird zu Hamburger-Menü</li>
+                    <li>Hero-Text-Größen reduziert</li>
+                    <li>Grid-Layouts werden zu einer Spalte</li>
+                    <li>Button-Stacking ändert sich zu vertikal</li>
+                    <li>Container-Padding wird angepasst</li>
+                </ul>
+            </section>
+
+            <!-- Interactive Elements -->
+            <section id="interactive" class="section">
+                <h2><i class="fas fa-mouse-pointer"></i> Interaktive Elemente</h2>
+                
+                <h3>Animationen</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Scroll-Animationen</h4>
+                        <ul>
+                            <li>AOS Fade-in Effekte</li>
+                            <li>Verzögerte Animationen</li>
+                            <li>Intersection Observer</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Hover-Effekte</h4>
+                        <ul>
+                            <li>Card-Transformationen</li>
+                            <li>Button-Animationen</li>
+                            <li>Farbübergänge</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Parallax-Effekte</h4>
+                        <ul>
+                            <li>Hintergrund-Bewegung</li>
+                            <li>Fixed Backgrounds</li>
+                            <li>Scroll-basiert</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>JavaScript Features</h3>
+                <ul class="tech-list">
+                    <li><strong>Smooth Scrolling:</strong> Navigation zu Sektionen</li>
+                    <li><strong>Form Validation:</strong> Kontaktformular-Überprüfung</li>
+                    <li><strong>Mobile Menu:</strong> Hamburger-Menü Toggle</li>
+                    <li><strong>Navbar Styling:</strong> Scroll-basierte Änderungen</li>
+                    <li><strong>Parallax Movement:</strong> Hintergrund-Bewegung</li>
+                    <li><strong>Button States:</strong> Loading-Animationen</li>
+                </ul>
+            </section>
+
+            <!-- Technical Structure -->
+            <section id="technical" class="section">
+                <h2><i class="fas fa-code"></i> Technische Struktur</h2>
+                
+                <h3>HTML Struktur</h3>
+                <ul>
+                    <li>Semantische HTML5 Elemente</li>
+                    <li>Korrekte Überschriften-Hierarchie (h1, h2, h3)</li>
+                    <li>Barrierefreie Formular-Labels</li>
+                    <li>Integration externer Bibliotheken</li>
+                    <li>SEO Meta-Tags</li>
+                </ul>
+
+                <h3>CSS Architektur</h3>
+                <ul>
+                    <li>CSS Custom Properties (Variablen)</li>
+                    <li>Mobile-first Responsive Design</li>
+                    <li>Flexbox und CSS Grid Layouts</li>
+                    <li>Moderne CSS Features (backdrop-filter, object-fit)</li>
+                    <li>Smooth Transitions und Animationen</li>
+                </ul>
+
+                <h3>Externe Abhängigkeiten</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Google Fonts</h4>
+                        <p>Inter & Playfair Display</p>
+                        <code>fonts.googleapis.com</code>
+                    </div>
+                    <div class="card">
+                        <h4>Font Awesome</h4>
+                        <p>Version 6.4.0 Icons</p>
+                        <code>cdnjs.cloudflare.com</code>
+                    </div>
+                    <div class="card">
+                        <h4>AOS Library</h4>
+                        <p>Scroll-Animationen</p>
+                        <code>unpkg.com</code>
+                    </div>
+                </div>
+
+                <h3>Performance Features</h3>
+                <ul>
+                    <li>Eingebettete SVG-Grafiken (keine externen Bilder)</li>
+                    <li>CSS in HTML eingebettet (reduzierte HTTP-Requests)</li>
+                    <li>Optimierte Animationen mit CSS transforms</li>
+                    <li>Lazy-Loading für Scroll-Animationen</li>
+                    <li>Backdrop-filter für Glasmorphismus-Effekte</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer style="background: #1a1a1a; color: white; padding: 2rem 0; margin-top: 3rem; text-align: center;">
+        <div class="container">
+            <p>&copy; 2024 Website Analyse - CorePulse Fitness Studio</p>
+            <p style="opacity: 0.7; margin-top: 0.5rem;">Vollständige Struktur-, Design- und Technische Analyse</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to navigation based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.background = '#ff6b35';
+                    link.style.color = 'white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
