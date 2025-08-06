@@ -17,16 +17,17 @@
     
     <style>
         :root {
-            --primary-color: #ff6b35;
-            --secondary-color: #1a1a1a;
-            --accent-color: #f7b801;
+            --primary-color: #1e3a8a;
+            --secondary-color: #374151;
+            --accent-color: #3b82f6;
             --text-light: #ffffff;
-            --text-dark: #333333;
-            --text-gray: #666666;
-            --bg-light: #f8f9fa;
-            --bg-dark: #1a1a1a;
-            --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7b801 100%);
-            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-dark: #111827;
+            --bg-medium: #374151;
+            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-dark: linear-gradient(135deg, #111827 0%, #374151 100%);
             --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
             --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
@@ -55,7 +56,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(17, 24, 39, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: all 0.3s ease;
@@ -64,7 +65,7 @@
 
         .navbar.scrolled {
             padding: 10px 0;
-            background: rgba(26, 26, 26, 0.98);
+            background: rgba(17, 24, 39, 0.98);
         }
 
         .nav-container {
@@ -131,7 +132,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23ff6b35"/><stop offset="100%" style="stop-color:%23f7b801"/></linearGradient></defs><rect width="1200" height="800" fill="url(%23bg)"/><polygon points="0,800 400,600 800,700 1200,500 1200,800" fill="rgba(255,255,255,0.1)"/></svg>');
+            background: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.6)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -303,7 +304,7 @@
         /* Parallax Section */
         .parallax {
             height: 60vh;
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="gym" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="50" cy="50" r="2" fill="rgba(255,107,53,0.3)"/></pattern></defs><rect width="1200" height="600" fill="%23333"/><rect width="1200" height="600" fill="url(%23gym)"/></svg>');
+            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -363,6 +364,71 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background: var(--bg-medium);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(17, 24, 39, 0.9));
+            color: var(--text-light);
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95rem;
+            opacity: 0.9;
         }
 
         /* Services Section */
@@ -671,7 +737,8 @@
             }
 
             .services-grid,
-            .features-grid {
+            .features-grid,
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -691,6 +758,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#about">Über uns</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#testimonials">Bewertungen</a></li>
                     <li><a href="#contact">Kontakt</a></li>
@@ -794,7 +862,61 @@
                     <a href="#services" class="btn btn-primary">Unsere Services</a>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='aboutBg' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23ff6b35'/><stop offset='100%' style='stop-color:%23f7b801'/></linearGradient></defs><rect width='400' height='300' fill='url(%23aboutBg)'/><circle cx='200' cy='150' r='50' fill='rgba(255,255,255,0.3)'/><text x='200' y='160' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Fitness</text></svg>" alt="CorePulse Studio">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="CorePulse Studio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Unser Studio</h2>
+                <p>Entdecke unsere moderne Ausstattung und inspirierende Trainingsumgebung</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Krafttraining">
+                    <div class="gallery-overlay">
+                        <h3>Krafttraining</h3>
+                        <p>Modernste Geräte für effektives Krafttraining</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cardio Training">
+                    <div class="gallery-overlay">
+                        <h3>Cardio Training</h3>
+                        <p>Ausdauertraining in motivierender Atmosphäre</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Yoga & Stretching">
+                    <div class="gallery-overlay">
+                        <h3>Yoga & Stretching</h3>
+                        <p>Entspannung und Flexibilität im Fokus</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Functional Training">
+                    <div class="gallery-overlay">
+                        <h3>Functional Training</h3>
+                        <p>Bewegungsabläufe für den Alltag trainieren</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Gruppenkurse">
+                    <div class="gallery-overlay">
+                        <h3>Gruppenkurse</h3>
+                        <p>Gemeinsam stark - motivierende Kurse</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Personal Training">
+                    <div class="gallery-overlay">
+                        <h3>Personal Training</h3>
+                        <p>Individuelle Betreuung für beste Ergebnisse</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -970,6 +1092,7 @@
                     <a href="#home">Home</a>
                     <a href="#features">Features</a>
                     <a href="#about">Über uns</a>
+                    <a href="#gallery">Galerie</a>
                     <a href="#services">Services</a>
                 </div>
                 <div class="footer-section">
