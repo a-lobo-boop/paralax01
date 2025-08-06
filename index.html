@@ -307,35 +307,7 @@
             z-index: 2;
         }
 
-        /* Parallax Section */
-        .parallax {
-            height: 60vh;
-            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: scroll;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-light);
-            position: relative;
-            z-index: 10;
-            margin: 40px 0;
-            clear: both;
-        }
 
-        .parallax-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .parallax-content p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
 
         /* About Section */
         .about {
@@ -510,6 +482,45 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent-color);
+        }
+
+        /* Services CTA */
+        .services-cta {
+            margin-top: 80px;
+            padding: 60px 40px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-content .btn {
+            background: white;
+            color: var(--accent-color);
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-content .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: var(--text-light);
         }
 
         /* Testimonials */
@@ -767,6 +778,19 @@
                 grid-template-columns: 1fr;
             }
 
+            .services-cta {
+                margin-top: 60px;
+                padding: 40px 20px;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+
             .container {
                 padding: 0 15px;
             }
@@ -863,15 +887,6 @@
                     <p>Verfolge deine Fortschritte, buche Kurse und bleibe motiviert mit unserer App.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Parallax Section -->
-    <section class="parallax">
-        <div class="parallax-content" data-aos="zoom-in">
-            <h2>Bereit für die Transformation?</h2>
-            <p>Schließe dich über 5.000 zufriedenen Mitgliedern an</p>
-            <a href="#contact" class="btn btn-primary">Kostenlose Probestunde</a>
         </div>
     </section>
 
@@ -994,6 +1009,15 @@
                         <p>Sauna, Massage und Regenerationsprogramme für optimale Erholung.</p>
                         <div class="service-price">ab 40€ / Session</div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section within Services -->
+            <div class="services-cta" data-aos="fade-up" data-aos-delay="700">
+                <div class="cta-content">
+                    <h2>Bereit für die Transformation?</h2>
+                    <p>Schließe dich über 5.000 zufriedenen Mitgliedern an</p>
+                    <a href="#contact" class="btn btn-primary">Kostenlose Probestunde</a>
                 </div>
             </div>
         </div>
