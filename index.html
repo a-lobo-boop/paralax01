@@ -19,14 +19,16 @@
         :root {
             --primary-color: #1e3a8a;
             --secondary-color: #374151;
-            --accent-color: #3b82f6;
+            --accent-color: #f59e0b;
             --text-light: #ffffff;
             --text-dark: #1f2937;
             --text-gray: #6b7280;
+            --text-contrast: #fbbf24;
             --bg-light: #f9fafb;
             --bg-dark: #111827;
             --bg-medium: #374151;
             --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
             --gradient-dark: linear-gradient(135deg, #111827 0%, #374151 100%);
             --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
             --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -78,7 +80,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--accent-color);
             text-decoration: none;
         }
 
@@ -103,7 +105,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
+            background: var(--accent-color);
             transition: width 0.3s ease;
         }
 
@@ -112,7 +114,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .mobile-menu {
@@ -281,7 +283,7 @@
 
         .feature-icon {
             font-size: 3rem;
-            color: var(--primary-color);
+            color: var(--accent-color);
             margin-bottom: 20px;
             position: relative;
             z-index: 2;
@@ -313,6 +315,9 @@
             justify-content: center;
             text-align: center;
             color: var(--text-light);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
         }
 
         .parallax-content h2 {
@@ -331,6 +336,8 @@
         .about {
             padding: 100px 0;
             background: white;
+            position: relative;
+            z-index: 2;
         }
 
         .about-content {
@@ -423,7 +430,7 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--accent-color);
+            color: var(--text-contrast);
         }
 
         .gallery-overlay p {
@@ -491,7 +498,7 @@
         .service-price {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         /* Testimonials */
@@ -539,7 +546,7 @@
 
         .testimonial-author {
             font-weight: 600;
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         /* Contact Section */
@@ -568,7 +575,7 @@
 
         .contact-item i {
             font-size: 1.5rem;
-            color: var(--primary-color);
+            color: var(--accent-color);
             margin-right: 15px;
             width: 30px;
         }
@@ -602,7 +609,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
+            border-color: var(--accent-color);
         }
 
         .form-group textarea {
@@ -629,7 +636,7 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .footer-section p,
@@ -642,7 +649,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .social-links {
@@ -655,7 +662,7 @@
         .social-links a {
             width: 50px;
             height: 50px;
-            background: var(--gradient-primary);
+            background: var(--gradient-accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
