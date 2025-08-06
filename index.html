@@ -367,8 +367,9 @@
 
         /* Services Section */
         .services {
-            padding: 100px 0;
+            padding: 100px 0 120px 0;
             background: var(--bg-light);
+            position: relative;
         }
 
         .services-grid {
@@ -383,11 +384,14 @@
             overflow: hidden;
             box-shadow: var(--shadow-light);
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-heavy);
+            z-index: 2;
         }
 
         .service-image {
@@ -429,6 +433,8 @@
             padding: 100px 0;
             background: var(--bg-dark);
             color: var(--text-light);
+            position: relative;
+            z-index: 0;
         }
 
         .testimonials-grid {
