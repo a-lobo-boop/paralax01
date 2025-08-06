@@ -27,7 +27,7 @@
             --bg-light: #f9fafb;
             --bg-dark: #111827;
             --bg-medium: #374151;
-            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-primary: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
             --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
             --gradient-dark: linear-gradient(135deg, #111827 0%, #374151 100%);
             --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -134,7 +134,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.6)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -217,8 +217,10 @@
 
         /* Features Section */
         .features {
-            padding: 100px 0;
+            padding: 100px 0 120px 0;
             background: var(--bg-light);
+            position: relative;
+            z-index: 2;
         }
 
         .section-header {
@@ -256,6 +258,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            z-index: 3;
+            margin-bottom: 20px;
         }
 
         .feature-card::before {
@@ -306,7 +310,7 @@
         /* Parallax Section */
         .parallax {
             height: 60vh;
-            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -375,8 +379,10 @@
 
         /* Gallery Section */
         .gallery {
-            padding: 100px 0;
+            padding: 120px 0;
             background: var(--bg-medium);
+            position: relative;
+            z-index: 2;
         }
 
         .gallery-grid {
@@ -503,11 +509,11 @@
 
         /* Testimonials */
         .testimonials {
-            padding: 100px 0;
+            padding: 120px 0;
             background: var(--bg-dark);
             color: var(--text-light);
             position: relative;
-            z-index: 0;
+            z-index: 2;
         }
 
         .testimonials-grid {
@@ -551,8 +557,10 @@
 
         /* Contact Section */
         .contact {
-            padding: 100px 0;
+            padding: 120px 0;
             background: white;
+            position: relative;
+            z-index: 2;
         }
 
         .contact-content {
@@ -869,7 +877,7 @@
                     <a href="#services" class="btn btn-primary">Unsere Services</a>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="CorePulse Studio">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?auto=format&fit=crop&w=800&q=80" alt="CorePulse Studio">
                 </div>
             </div>
         </div>
@@ -884,42 +892,42 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Krafttraining">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" alt="Krafttraining">
                     <div class="gallery-overlay">
                         <h3>Krafttraining</h3>
                         <p>Modernste Geräte für effektives Krafttraining</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cardio Training">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Cardio Training">
                     <div class="gallery-overlay">
                         <h3>Cardio Training</h3>
                         <p>Ausdauertraining in motivierender Atmosphäre</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Yoga & Stretching">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Yoga & Stretching">
                     <div class="gallery-overlay">
                         <h3>Yoga & Stretching</h3>
                         <p>Entspannung und Flexibilität im Fokus</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Functional Training">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=800&q=80" alt="Functional Training">
                     <div class="gallery-overlay">
                         <h3>Functional Training</h3>
                         <p>Bewegungsabläufe für den Alltag trainieren</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Gruppenkurse">
+                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=800&q=80" alt="Gruppenkurse">
                     <div class="gallery-overlay">
                         <h3>Gruppenkurse</h3>
                         <p>Gemeinsam stark - motivierende Kurse</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Personal Training">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Personal Training">
                     <div class="gallery-overlay">
                         <h3>Personal Training</h3>
                         <p>Individuelle Betreuung für beste Ergebnisse</p>
